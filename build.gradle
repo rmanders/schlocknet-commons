@@ -15,7 +15,6 @@ buildscript {
   }
 }
 plugins {
-  id 'java'
   id 'idea'
   id 'jacoco'
   id 'java-library'
@@ -27,17 +26,17 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-  compile('ch.qos.logback:logback-core:1.2.3')
-  compile('com.auth0:java-jwt:3.3.0')
-  compile('com.google.code.gson:gson:2.8.2')
-  compile('com.google.guava:guava:24.1-jre')
-  compile('commons-lang:commons-lang:2.6')
-  compile('org.slf4j:slf4j-api:1.7.25')
+  api('ch.qos.logback:logback-core:1.2.3')
+  api('com.auth0:java-jwt:3.3.0')
+  api('com.google.code.gson:gson:2.8.2')
+  api('com.google.guava:guava:24.1-jre')
+  api('commons-lang:commons-lang:2.6')
+  api('org.slf4j:slf4j-api:1.7.25')
   compileOnly('org.projectlombok:lombok:1.16.18')
-  compileOnly('org.springframework.boot:spring-boot-starter-actuator:' + springBootVersion)
-  testCompile('com.openpojo:openpojo:0.8.6')
-  testCompile('nl.jqno.equalsverifier:equalsverifier:2.3.3')
-  testCompile('junit:junit:4.12')
+  implementation('org.springframework.boot:spring-boot-starter-actuator:' + springBootVersion)
+  testImplementation('com.openpojo:openpojo:0.8.6')
+  testImplementation('nl.jqno.equalsverifier:equalsverifier:2.3.3')
+  testImplementation('junit:junit:4.12')
 }
 
 repositories {
