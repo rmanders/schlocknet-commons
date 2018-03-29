@@ -1,19 +1,5 @@
-buildscript {
-  ext {
-    springBootVersion = '1.5.9.RELEASE'
-    gradleReleaseVersion = '2.6.0'
-  }
-  repositories {
-    mavenLocal()
-    jcenter()
-    mavenCentral()
-  }
-  dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    classpath("net.researchgate:gradle-release:${gradleReleaseVersion}")
-    classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"
-  }
-}
+
+
 plugins {
   id 'idea'
   id 'jacoco'
@@ -32,8 +18,9 @@ dependencies {
   api('com.google.guava:guava:24.1-jre')
   api('commons-lang:commons-lang:2.6')
   api('org.slf4j:slf4j-api:1.7.25')
-  compileOnly('org.projectlombok:lombok:1.16.18')
-  implementation('org.springframework.boot:spring-boot-starter-actuator:' + springBootVersion)
+  annotationProcessor('org.projectlombok:lombok:1.16.18')
+  implementation('org.projectlombok:lombok:1.16.18')
+  implementation('org.springframework.boot:spring-boot-starter-actuator:1.5.9.RELEASE')
   testImplementation('com.openpojo:openpojo:0.8.6')
   testImplementation('nl.jqno.equalsverifier:equalsverifier:2.3.3')
   testImplementation('junit:junit:4.12')
